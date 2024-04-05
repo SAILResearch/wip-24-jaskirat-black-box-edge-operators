@@ -1,0 +1,6 @@
+onnx
+onnxruntime
+torchvision
+pillow>=8.2.0
+onnxruntime-extensions; python_version < '3.11'
+neural-compressor

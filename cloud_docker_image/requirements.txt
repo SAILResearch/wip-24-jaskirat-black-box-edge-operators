@@ -1,0 +1,11 @@
+pillow
+flask
+requests
+onnxruntime-gpu
+opencv-python
+numpy==1.23.4
+speedtest-cli
+matplotlib
+pycocotools
+mxnet==1.9.1
+scipy
