@@ -1,0 +1,17 @@
+Model,top5,top1,miou
+ResNet,96.008,82.52,
+ResNet EarlyExit,93.442,76.586,
+ResNet Quantize,95.792,82.148,
+ResNet Quantize EarlyExit,93.034,75.392,
+ResNext,96.456,83.244,
+ResNext EarlyExit,93.92,77.276,
+ResNext Quantize,96.402,83.084,
+ResNext Quantize EarlyExit,93.83,75.668,
+FCN,,,66.7343
+FCN EarlyExit,,,55.16
+FCN Quantize,,,66.38
+FCN Quantize EarlyExit,,,54.36
+DUC,,,81.92
+DUC EarlyExit,,,75.746
+DUC Quantize,,,81.62
+DUC Quantize EarlyExit,,,75.32
