@@ -40,10 +40,11 @@ ort_session = ort.InferenceSession(model.SerializeToString())
 # Create a dummy input tensor
 image_tensors=[]
 for img in dataset:
-    image = Image.open(os.path.join('coco_100_images', img)).convert('RGB')
-    image=fcn_resnet_preprocess_image(image)
-    image = np.expand_dims(image, 0)
-    image_tensors.append(image)
+    if img =='000000163682.jpg':
+        image = Image.open(os.path.join('coco_100_images', img)).convert('RGB')
+        image=fcn_resnet_preprocess_image(image)
+        image = np.expand_dims(image, 0)
+        image_tensors.append(image)
 
 # Prepare data for CSV
 csv_data = [("Node Name", "Output Tensor Name", "Output Tensor Dimention","Output Tensor Size (Mb)")]
