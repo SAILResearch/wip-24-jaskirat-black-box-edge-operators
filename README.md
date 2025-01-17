@@ -9,5 +9,7 @@
 Used the following port forwarding in Server1 to connect edge tier in Server 1 with the cloud tier in Server2.
 ssh -o ServerAliveInterval=60 -f -N -L :5002:localhost:5002 username@server2 Ip address
 
-Use the following port fowarding in Server1 to restart or stop cloud tier in Server2
+Use the following port forwarding in Server1 to restart or stop the cloud tier in Server2
 ssh -o ServerAliveInterval=60 -f -N -L :8000:localhost:8000 username@server2 Ip address
+
+The speed test tool confirmed that the network bandwidths are restricted to a particular value.
