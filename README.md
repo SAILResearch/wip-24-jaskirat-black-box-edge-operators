@@ -15,3 +15,7 @@ ssh -o ServerAliveInterval=60 -f -N -L :8000:localhost:8000 username@server2 Ip 
 The speed test tool confirmed that the network bandwidths are restricted to approximately a particular value.
 
 Link to the Ongoing Research: https://arxiv.org/abs/2403.17154
+
+
+we used JSON format for the content type in our research instead of protobuf for data transmission across the network due to its Simplicity & Ease of Use, Widespread Adoption & Compatibility, Flexibility & Extensibility, Web & API Tooling Support, and Interoperability & Collaboration. 
+
