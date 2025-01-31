@@ -11,3 +11,6 @@ ssh -o ServerAliveInterval=60 -f -N -L :5002:localhost:5002 username@server2 Ip 
 
 Use the following port fowarding in Server1 to restart or stop cloud tier in Server2
 ssh -o ServerAliveInterval=60 -f -N -L :8000:localhost:8000 username@server2 Ip address
+
+
+The speed test tool confirmed that the network bandwidths used are restricted to a particular value.

@@ -26,3 +26,4 @@ docker build -t cloud_inference .
 docker run -it --net=cloud_network --cap-add=NET_ADMIN --name cloud_inference_container --gpus device=0 -e PYTHONUNBUFFERED=1 --cpus="16" --memory="64g" -p 5002:5002 -d cloud_inference
 ```
 
+The speed test tool confirmed that the network bandwidths used are restricted to a particular value.
