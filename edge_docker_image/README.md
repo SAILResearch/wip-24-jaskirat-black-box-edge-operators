@@ -24,5 +24,9 @@ docker run -it --net=mobile_edge_network --cap-add=NET_ADMIN --name edge_inferen
 ```shell
 ssh -o ServerAliveInterval=60 -f -N -L :5002:localhost:5002 username@servername
 ```
+<<<<<<< HEAD
 
 The speed test tool confirmed that the network bandwidths used are restricted to a particular value.
+=======
+The speed test tool confirmed that the network bandwidths are restricted to approximately a particular value.
+>>>>>>> e5e0e2d07c90a51308649bca623284a4e4c76992
