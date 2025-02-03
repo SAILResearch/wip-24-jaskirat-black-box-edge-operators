@@ -9,21 +9,14 @@
 Used the following port forwarding in Server1 to connect edge tier in Server 1 with the cloud tier in Server2.
 ssh -o ServerAliveInterval=60 -f -N -L :5002:localhost:5002 username@server2 Ip address
 
-<<<<<<< HEAD
 Use the following port fowarding in Server1 to restart or stop cloud tier in Server2
 ssh -o ServerAliveInterval=60 -f -N -L :8000:localhost:8000 username@server2 Ip address
 
 
-The speed test tool confirmed that the network bandwidths used are restricted to a particular value.
-=======
-Use the following port forwarding in Server1 to restart or stop the cloud tier in Server2
-ssh -o ServerAliveInterval=60 -f -N -L :8000:localhost:8000 username@server2 Ip address
-
 The speed test tool confirmed that the network bandwidths are restricted to approximately a particular value.
+
+we used JSON format for the content type in our experiments instead of protobuf for data transmission across the network due to its Simplicity & Ease of Use, Widespread Adoption & Compatibility, Flexibility & Extensibility, Web & API Tooling Support, and Interoperability & Collaboration.
+
 
 Link to the Ongoing Research: https://arxiv.org/abs/2403.17154
 
-
-we used JSON format for the content type in our research instead of protobuf for data transmission across the network due to its Simplicity & Ease of Use, Widespread Adoption & Compatibility, Flexibility & Extensibility, Web & API Tooling Support, and Interoperability & Collaboration. 
-
->>>>>>> e5e0e2d07c90a51308649bca623284a4e4c76992

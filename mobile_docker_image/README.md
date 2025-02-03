@@ -26,10 +26,6 @@ docker build -t mobile_inference .
 docker run -it --net=mobile_edge_network --cap-add=NET_ADMIN --name mobile_inference_container -e PYTHONUNBUFFERED=1 --cpus="4" --memory="4g" -p 5000:5000 -d mobile_inference
 ```
 
-<<<<<<< HEAD
-The speed test tool confirmed that the network bandwidths used are restricted to a particular value.
-=======
 The speed test tool confirmed that the network bandwidths are restricted to approximately a particular value.
 
 
->>>>>>> e5e0e2d07c90a51308649bca623284a4e4c76992
