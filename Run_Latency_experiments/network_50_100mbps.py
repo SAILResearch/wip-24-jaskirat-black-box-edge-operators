@@ -89,8 +89,8 @@ def construct_url_for_sptq_earlyexit(tier,subject):
     return base_url.format(tier,subject), results_file.format(tier, subject)
 
 subjects=['resnet','resnext','fcn','duc']
-single_tiers=['mobile','edge','cloud']
-multi_tiers=['mobile_edge','mobile_cloud','edge_cloud']
+single_tiers=['cloud']
+multi_tiers=['mobile_cloud','edge_cloud']
 operators=['identity','sptq','earlyexit','sptq earlyexit']
 
 def initial_restart_of_containers():

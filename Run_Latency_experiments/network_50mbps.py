@@ -65,32 +65,32 @@ def stop_cloud_container(container_name):
 
 def construct_url_for_identity(tier,subject):
     base_url = 'http://0.0.0.0:5000/run_{}_single_inference_{}'
-    results_file= '{}_{}_50mbps_50mbps_results.txt'
+    results_file= '{}_{}_50mbps_results.txt'
     return base_url.format(tier,subject), results_file.format(tier, subject)
 
 def construct_url_for_partition(tier,subject):
     base_url = 'http://0.0.0.0:5000/run_{}_split_single_inference_{}'
-    results_file= '{}_{}_50mbps_50mbps_results.txt'
+    results_file= '{}_{}_50mbps_results.txt'
     return base_url.format(tier,subject), results_file.format(tier, subject)
 
 def construct_url_for_earlyexit(tier,subject):
     base_url = 'http://0.0.0.0:5000/run_{}_earlyexit2_single_inference_{}'
-    results_file= '{}_{}_earlyexit_50mbps_50mbps_results.txt'
+    results_file= '{}_{}_earlyexit_50mbps_results.txt'
     return base_url.format(tier,subject), results_file.format(tier, subject)
 
 def construct_url_for_sptq(tier,subject):
     base_url = 'http://0.0.0.0:5000/run_{}_single_inference_{}_int8_sptq'
-    results_file= '{}_{}_int8_sptq_50mbps_50mbps_results.txt'
+    results_file= '{}_{}_int8_sptq_50mbps_results.txt'
     return base_url.format(tier,subject), results_file.format(tier, subject)
 
 def construct_url_for_sptq_earlyexit(tier,subject):
     base_url = 'http://0.0.0.0:5000/run_{}_earlyexit2_single_inference_{}_int8_sptq'
-    results_file= '{}_{}_earlyexit_int8_sptq_50mbps_50mbps_results.txt'
+    results_file= '{}_{}_earlyexit_int8_sptq_50mbps_results.txt'
     return base_url.format(tier,subject), results_file.format(tier, subject)
 
 subjects=['resnet','resnext','fcn','duc']
-single_tiers=['cloud']
-multi_tiers=['mobile_cloud','edge_cloud']
+single_tiers=['mobile','edge']
+multi_tiers=['mobile_edge']
 operators=['identity','sptq','earlyexit','sptq earlyexit']
 
 def initial_restart_of_containers():

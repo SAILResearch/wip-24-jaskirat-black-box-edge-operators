@@ -18,7 +18,7 @@ def restart_mobile_container(container_name):
     if error:
         print("Error: {}".format(error.decode('utf-8')))
     else:
-        curl_command = 'docker exec -d {} bash -c "chmod +x ./network_50mbps.sh;./network_50mbps.sh"'.format(container_name)
+        curl_command = 'docker exec -d {} bash -c "chmod +x ./network_1mbps.sh;./network_1mbps.sh"'.format(container_name)
         process = Popen(curl_command, shell=True, stdout=PIPE, stderr=PIPE)
         output, error = process.communicate()
         if error:
@@ -33,7 +33,7 @@ def restart_edge_container(container_name):
     if error:
         print("Error: {}".format(error.decode('utf-8')))
     else:
-        curl_command = 'docker exec -d {} bash -c "chmod +x ./network_50mbps.sh;./network_50mbps.sh"'.format(container_name)
+        curl_command = 'docker exec -d {} bash -c "chmod +x ./network_200mbps.sh;./network_200mbps.sh"'.format(container_name)
         process = Popen(curl_command, shell=True, stdout=PIPE, stderr=PIPE)
         output, error = process.communicate()
         if error:
@@ -52,7 +52,7 @@ def stop_mobile_edge_container(container_name):
 
 def restart_cloud_container(container_name):
     # require ssh tunneling for connecting to external server using following command: ssh -o ServerAliveInterval=60 -f -N -L :8000:localhost:8000 username@servername
-    curl_command = 'curl -X POST -d "container_name={}" http://localhost:8000/restart_container_50mbps'.format(container_name)
+    curl_command = 'curl -X POST -d "container_name={}" http://localhost:8000/restart_container_200mbps'.format(container_name)
     process = Popen(curl_command, shell=True, stdout=PIPE, stderr=PIPE)
     output, error = process.communicate()
     print(output)
@@ -65,32 +65,32 @@ def stop_cloud_container(container_name):
 
 def construct_url_for_identity(tier,subject):
     base_url = 'http://0.0.0.0:5000/run_{}_single_inference_{}'
-    results_file= '{}_{}_50mbps_50mbps_results.txt'
+    results_file= '{}_{}_1mbps_200mbps_results.txt'
     return base_url.format(tier,subject), results_file.format(tier, subject)
 
 def construct_url_for_partition(tier,subject):
     base_url = 'http://0.0.0.0:5000/run_{}_split_single_inference_{}'
-    results_file= '{}_{}_50mbps_50mbps_results.txt'
+    results_file= '{}_{}_1mbps_200mbps_results.txt'
     return base_url.format(tier,subject), results_file.format(tier, subject)
 
 def construct_url_for_earlyexit(tier,subject):
     base_url = 'http://0.0.0.0:5000/run_{}_earlyexit2_single_inference_{}'
-    results_file= '{}_{}_earlyexit_50mbps_50mbps_results.txt'
+    results_file= '{}_{}_earlyexit_1mbps_200mbps_results.txt'
     return base_url.format(tier,subject), results_file.format(tier, subject)
 
 def construct_url_for_sptq(tier,subject):
     base_url = 'http://0.0.0.0:5000/run_{}_single_inference_{}_int8_sptq'
-    results_file= '{}_{}_int8_sptq_50mbps_50mbps_results.txt'
+    results_file= '{}_{}_int8_sptq_1mbps_200mbps_results.txt'
     return base_url.format(tier,subject), results_file.format(tier, subject)
 
 def construct_url_for_sptq_earlyexit(tier,subject):
     base_url = 'http://0.0.0.0:5000/run_{}_earlyexit2_single_inference_{}_int8_sptq'
-    results_file= '{}_{}_earlyexit_int8_sptq_50mbps_50mbps_results.txt'
+    results_file= '{}_{}_earlyexit_int8_sptq_1mbps_200mbps_results.txt'
     return base_url.format(tier,subject), results_file.format(tier, subject)
 
 subjects=['resnet','resnext','fcn','duc']
 single_tiers=['cloud']
-multi_tiers=['mobile_cloud','edge_cloud']
+multi_tiers=['edge_cloud','mobile_cloud']
 operators=['identity','sptq','earlyexit','sptq earlyexit']
 
 def initial_restart_of_containers():
