@@ -18,5 +18,5 @@ The speed test tool confirmed that the network bandwidths are restricted to appr
 we used JSON format for the content type in our experiments instead of protobuf for data transmission across the network due to its Simplicity & Ease of Use, Widespread Adoption & Compatibility, Flexibility & Extensibility, Web & API Tooling Support, and Interoperability & Collaboration.
 
 
-Link to the Ongoing Research: https://arxiv.org/abs/2403.17154
+Link to the paper: https://arxiv.org/abs/2403.17154
 
